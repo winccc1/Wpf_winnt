@@ -1,0 +1,31 @@
+﻿<Window x:Class="InstalledAppsInfo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Installed Applications Info" Height="450" Width="800">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<!-- Title -->
+		<TextBlock Text="Installed Applications Information" FontSize="18" FontWeight="Bold" Margin="10"/>
+
+		<!-- List of Installed Applications -->
+		<ListBox x:Name="lstInstalledApps" Grid.Row="1" Margin="10">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel>
+						<TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+						<TextBlock Text="Version: " TextWrapping="Wrap"/>
+						<TextBlock Text="{Binding Version}" TextWrapping="Wrap"/>
+						<TextBlock Text="Service Pack/CU: " TextWrapping="Wrap"/>
+						<TextBlock Text="{Binding ServicePack}" TextWrapping="Wrap"/>
+						<Separator/>
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+	</Grid>
+</Window>
+
